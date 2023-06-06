@@ -4,5 +4,4 @@ for tens in range(10):
         if tens < 8:
             print("{:d}{:d}, ".format(tens, ones), end="")
         else:
-            print("{:d}{:d}".format(tens, ones))
-print()
+            print("{:d}{:d}".format(tens, ones) end=", ")
