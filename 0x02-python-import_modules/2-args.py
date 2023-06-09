@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-import sys
 
 if __name__ == "__main__":
-    # Get the number of arguments
-    num_args = len(sys.argv) - 1
+    """Print the number of and list of arguments."""
+    import sys
 
-    # Print the number of arguments
-    if num_args == 0:
-        print("Number of argument(s): 0.")
-    elif num_args == 1:
-        print("Number of argument(s): 1 (argument):")
+    # Get the count of arguments (excluding the script name)
+    count = len(sys.argv) - 1
+
+    # Check the number of arguments and print the appropriate message
+    if count == 0:
+        print("0 arguments.")
+    elif count == 1:
+        print("1 argument:")
     else:
-        print("Number of argument(s): {} (arguments):".format(num_args))
+        print("{} arguments:".format(count))
 
-    # Print the list of arguments
-    for i, arg in enumerate(sys.argv[1:], start=1):
-        print("{}: {}".format(i, arg))
+    # Iterate through each argument and print its position and value
+    for i in range(count):
+        print("{}: {}".format(i + 1, sys.argv[i + 1]))
