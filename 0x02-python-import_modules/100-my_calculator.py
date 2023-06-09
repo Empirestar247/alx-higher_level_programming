@@ -2,20 +2,27 @@
 
 if __name__ == "__main__":
     """Handle basic arithmetic operations."""
-    from calculator_1 import add, subtract, multiply, divide
     import sys
 
-    # Check the number of arguments
-    if len(sys.argv) - 1 != 3:
+    if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-    operators = {"+": add, "-": subtract, "*": multiply, "/": divide}
-    if sys.argv[2] not in operators:
+    a = int(sys.argv[1])
+    operator = sys.argv[2]
+    b = int(sys.argv[3])
+
+    if operator == "+":
+        result = a + b
+    elif operator == "-":
+        result = a - b
+    elif operator == "*":
+        result = a * b
+    elif operator == "/":
+        result = a / b
+    else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    result = operators[sys.argv[2]](a, b)
-    print("{} {} {} = {}".format(a, sys.argv[2], b, result))
+    print("{} {} {} = {}".format(a, operator, b, result))
+    sys.exit(0)
