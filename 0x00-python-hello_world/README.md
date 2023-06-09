@@ -24,8 +24,6 @@ Where does the name ‘Python’ come from?
 
 The name "Python" for the programming language originated from the popular British comedy group called Monty Python. Guido van Rossum, the creator of Python, was a fan of the group, and he chose the name as a tribute to their work.
 
-Python was first released in 1991, and Guido van Rossum wanted to create a programming language that was easy to read, write, and understand. He wanted it to be fun and enjoyable, just like watching Monty Python's Flying Circus, a popular television show created by the comedy group.
-
 What is the Zen of Python?
 
 The Zen of Python is a collection of guiding principles and philosophies that serve as a set of best practices for writing Python code. These principles were written by Tim Peters, a prominent member of the Python community, and are included as an Easter egg in the Python interpreter.
