@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def switch_values(a, b):
-    # Insert your code here
-    a, b = b, a
-    return a, b
+a = 89
+b = 10
+a, b = b, a
+print("a={:d} - b={:d}".format(a, b))
