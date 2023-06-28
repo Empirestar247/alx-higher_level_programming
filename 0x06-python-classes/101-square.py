@@ -1,17 +1,14 @@
 #!/usr/bin/python3
 
-"""Define a class Square."""
-
-
 class Square:
-    """Represent a square."""
+    """Represents a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new square.
+        """Initializes a new square.
 
         Args:
-            size (int): The size of the new square.
-            position (tuple): The position of the new square.
+            size (int): The size of the square.
+            position (tuple): The position of the square.
         """
         self.__size = 0
         self.__position = (0, 0)
@@ -20,11 +17,12 @@ class Square:
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Retrieve the size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
+        """Set the size of the square."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -33,11 +31,12 @@ class Square:
 
     @property
     def position(self):
-        """Get/set the current position of the square."""
+        """Retrieve the position of the square."""
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Set the position of the square."""
         if (
             not isinstance(value, tuple)
             or len(value) != 2
@@ -48,13 +47,13 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Return the current area of the square."""
+        """Calculate and return the area of the square."""
         return self.__size * self.__size
 
     def my_print(self):
-        """Print the square using the # character."""
+        """Print the square using '#' character."""
         if self.__size == 0:
-            print("")
+            print()
             return
 
         for _ in range(self.__position[1]):
@@ -63,9 +62,10 @@ class Square:
             print(" " * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
-        """Define the print() representation of a Square."""
+        """Return a string representation of the square."""
         if self.__size == 0:
             return ""
+
         output = ""
         for _ in range(self.__position[1]):
             output += "\n"
