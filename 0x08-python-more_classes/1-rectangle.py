@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Module Rectangle
 Defines a class Rectangle
