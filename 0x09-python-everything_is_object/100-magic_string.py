@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-
-def magic_string():
-    return "\n".join(["BestSchool" * (i+1) for i in range(5)])
+def magic_string(i=[0]):
+    i[0] += 1
+    return str("BestSchool, " * (i[0] - 1)) + "BestSchool"
