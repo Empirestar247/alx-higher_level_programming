@@ -1,6 +1,12 @@
+#!/usr/bin/python3
+"""
+Return a list of available attributes and methods of an object.
+"""
+
+
 def lookup(obj):
     """
-    Return the list of available attributes and methods of an object.
+    Return a list of available attributes and methods of an object.
 
     Args:
         obj: The object to inspect.
@@ -8,10 +14,10 @@ def lookup(obj):
     Returns:
         A list of attribute and method names.
     """
-    return [name for name in dir(obj) if not name.startswith('__')]
+    return dir(obj)
 
 
 # Example usage
-my_list = [1, 2, 3]
-result = lookup(my_list)
+my_object = [1, 2, 3]
+result = lookup(my_object)
 print(result)
