@@ -1,30 +1,30 @@
 #!/usr/bin/python3
-
 def pascal_triangle(n):
-    """Returns the Pascal's triangle up to the given number of lines.
+    """ Function that returns the pascal triangle
 
     Args:
-        n (int): Number of lines in the Pascal's triangle.
+        n: number of lines
 
     Returns:
-        list: A matrix representing the Pascal's triangle.
+        matrix: a matrix with the pascal triangle
+
     """
 
     matrix = []
-    prev_row = []
+    prev = []
 
     for i in range(n):
-        row = []
-        prev = -1
-        nxt = 0
-        for j in range(len(prev_row) + 1):
-            if prev == -1 or nxt == len(prev_row):
-                row.append(1)
+        res_list = []
+        p1 = -1
+        p2 = 0
+        for j in range(len(prev) + 1):
+            if p1 == -1 or p2 == len(prev):
+                res_list += [1]
             else:
-                row.append(prev_row[prev] + prev_row[nxt])
-            prev += 1
-            nxt += 1
-        matrix.append(row)
-        prev_row = row[:]
+                res_list += [prev[p1] + prev[p2]]
+            p1 += 1
+            p2 += 1
+        matrix.append(res_list)
+        prev = res_list[:]
 
     return matrix
