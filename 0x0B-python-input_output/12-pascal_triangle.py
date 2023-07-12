@@ -1,24 +1,30 @@
 #!/usr/bin/python3
-"""
-    12-pascal_triangle: pascal_triangle()
-"""
-
 
 def pascal_triangle(n):
-    """
-        returns a lis of lists of integers
-        Args:
-            n (int): number of lists and digits
-        Returns: list of lists
-    """
-    t_row = [1]
-    temp_l = [0]
-    pTri = []
+    """Returns the Pascal's triangle up to the given number of lines.
 
-    if n <= 0:
-        return pTri
+    Args:
+        n (int): Number of lines in the Pascal's triangle.
+
+    Returns:
+        list: A matrix representing the Pascal's triangle.
+    """
+
+    matrix = []
+    prev_row = []
 
     for i in range(n):
-        pTri.append(t_row)
-        t_row = [l+r for, r in zip(t_row + temp_1, temp_1 + t_row)]
-    return pTri
+        row = []
+        prev = -1
+        nxt = 0
+        for j in range(len(prev_row) + 1):
+            if prev == -1 or nxt == len(prev_row):
+                row.append(1)
+            else:
+                row.append(prev_row[prev] + prev_row[nxt])
+            prev += 1
+            nxt += 1
+        matrix.append(row)
+        prev_row = row[:]
+
+    return matrix
