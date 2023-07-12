@@ -1,64 +1,54 @@
 #!/usr/bin/python3
 
 import sys
-import signal
 
 # Initialize variables
 total_size = 0
-status_codes = {
-    '200': 0,
-    '301': 0,
-    '400': 0,
-    '401': 0,
-    '403': 0,
-    '404': 0,
-    '405': 0,
-    '500': 0
-}
+status_counts = {}
 
-line_count = 0
-
-
-def print_statistics():
-    # Print total file size
-    print(f"File size: {total_size}")
-
-    # Print number of lines by status code in ascending order
-    for code in sorted(status_codes.keys()):
-        count = status_codes[code]
-        if count > 0:
-            print(f"{code}: {count}")
-
-
-# Handle keyboard interruption (CTRL + C)
-def signal_handler(signal, frame):
-    print_statistics()
-    sys.exit(0)
-
-
-signal.signal(signal.SIGINT, signal_handler)
-
-# Process input lines
 try:
-    for line in sys.stdin:
-        line_count += 1
+    # Read stdin line by line
+    for line_number, line in enumerate(sys.stdin, 1):
+        # Parse the line
+        parts = line.split()
+        if len(parts) != 7:
+            continue
 
-        # Parse line
-        parts = line.strip().split()
-        status_code = parts[-2]
-        file_size = int(parts[-1])
+        ip_address = parts[0]
+        date = parts[2][1:]
+        status_code = parts[5]
+        file_size = int(parts[6])
 
         # Update total file size
         total_size += file_size
 
-        # Update status code count
-        if status_code in status_codes:
-            status_codes[status_code] += 1
+        # Update status code counts
+        if status_code in status_counts:
+            status_counts[status_code] += 1
+        else:
+            status_counts[status_code] = 1
 
         # Print statistics every 10 lines
-        if line_count % 10 == 0:
-            print_statistics()
+        if line_number % 10 == 0:
+            print(f"Total file size: {total_size}")
+
+            for code in sorted(status_counts.keys()):
+                count = status_counts[code]
+                print(f"{code}: {count}")
+
+    # Print final statistics
+    print(f"Total file size: {total_size}")
+
+    for code in sorted(status_counts.keys()):
+        count = status_counts[code]
+        print(f"{code}: {count}")
 
 except KeyboardInterrupt:
-    # Handle keyboard interruption (CTRL + C)
-    print_statistics()
+    # Handle keyboard interruption
+    print("\nKeyboard interruption detected. Printing final statistics.")
+
+    print(f"Total file size: {total_size}")
+
+    for code in sorted(status_counts.keys()):
+        count = status_counts[code]
+        print(f"{code}: {count}")
