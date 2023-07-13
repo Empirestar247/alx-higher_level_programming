@@ -31,14 +31,12 @@ try:
         # Print statistics every 10 lines
         if line_number % 10 == 0:
             print(f"Total file size: {total_size}")
-
             for code in sorted(status_counts.keys()):
                 count = status_counts[code]
                 print(f"{code}: {count}")
 
     # Print final statistics
     print(f"Total file size: {total_size}")
-
     for code in sorted(status_counts.keys()):
         count = status_counts[code]
         print(f"{code}: {count}")
@@ -46,9 +44,7 @@ try:
 except KeyboardInterrupt:
     # Handle keyboard interruption
     print("\nKeyboard interruption detected. Printing final statistics.")
-
     print(f"Total file size: {total_size}")
-
     for code in sorted(status_counts.keys()):
         count = status_counts[code]
         print(f"{code}: {count}")
