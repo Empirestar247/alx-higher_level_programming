@@ -122,3 +122,53 @@ greet('Alice', greeting='Hi')   # Output: Hi Alice
 
 In this example, the `greet` function has a required `name` argument and an optional `greeting` argument with a default value of `'Hello'`. You can call the function with just the required argument (`greet('John')`), or you can provide a different value for the optional argument (`greet('Alice', greeting='Hi')`). The function will print the provided greeting with the name.
 
+
+Almost a Circle:
+
+from the OpenAI Gym library, it is a programming exercise where you need to create a class that represents a rectangle and performs various operations related to it.
+
+import math
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+    def diagonal(self):
+        return math.sqrt(self.width ** 2 + self.height ** 2)
+
+    def is_square(self):
+        return self.width == self.height
+
+    def __str__(self):
+        return f"Rectangle(width={self.width}, height={self.height})"
+
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+
+    def __str__(self):
+        return f"Square(side={self.width})"
+
+
+rectangle = Rectangle(4, 5)
+print(rectangle.area())        # Output: 20
+print(rectangle.perimeter())   # Output: 18
+print(rectangle.diagonal())    # Output: 6.4031242374328485
+print(rectangle.is_square())   # Output: False
+print(rectangle)               # Output: Rectangle(width=4, height=5)
+
+square = Square(4)
+print(square.area())           # Output: 16
+print(square.perimeter())      # Output: 16
+print(square.diagonal())       # Output: 5.656854249492381
+print(square.is_square())      # Output: True
+print(square)                  # Output: Square(side=4)
+
