@@ -1,4 +1,17 @@
-SQL - More queries
+## SQL - More queries
+
+## ![SQL - More queries](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg)
+
+## A SQL JOIN is a way to combine data from two or more tables based on a common column or condition. There are different types of SQL JOINs, such as:
+
+**Different Types of SQL JOINs**
+
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table.
+
+![cheat Sql joins](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230817%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230817T000034Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=694bce05d10c135ae9c85fa1d76419cc5dbb49f699643f0fa620a649cb595006)
 
 
  **Creating a New MySQL User:**
