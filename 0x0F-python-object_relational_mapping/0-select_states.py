@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Display all rows in the states table of a database."""
+'''Prints all rows in the states table of a database.
+'''
 import sys
 import MySQLdb
 
