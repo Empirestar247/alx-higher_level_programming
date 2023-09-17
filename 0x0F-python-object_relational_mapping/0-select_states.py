@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Displays all rows from the states table in a database"""
-
 import sys
 import MySQLdb
 
@@ -19,4 +18,3 @@ if __name__ == '__main__':
         for result in results:
             print(result)
         db_connection.close()
-
