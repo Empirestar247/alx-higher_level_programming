@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-'''Enumerates and displays all rows from the states table in a database.
-'''
+"""Enumerates and displays all rows from the states table in a database."""
 import sys
 import MySQLdb
 
