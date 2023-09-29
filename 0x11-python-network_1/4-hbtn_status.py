@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-fetches the status of https://intranet.hbtn.io and
-displays information about the HTTP response.
-"""
+"""fetches https://intranet.hbtn.io/status."""
 import requests
 
 
