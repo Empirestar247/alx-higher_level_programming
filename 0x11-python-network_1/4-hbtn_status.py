@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A script that fetches the status of https://intranet.hbtn.io and
+fetches the status of https://intranet.hbtn.io and
 displays information about the HTTP response.
 """
 import requests
