@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-A Python script that takes in a URL and an email address as command-line arguments,
-sends a POST request to the specified URL with the email as a parameter,
-and displays the body of the response.
+Script that takes in a URL and an email address,
+sends a POST request to the passed URL with the email,
+and displays the body of the response
 """
 import requests
 import sys
