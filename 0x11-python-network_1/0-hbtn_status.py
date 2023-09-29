@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fetches and prints the content of a URL."""
+"""A script that
 - fetches https://alx-intranet.hbtn.io/status.
 - uses urlib package
 """
