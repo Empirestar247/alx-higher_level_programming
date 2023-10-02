@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A script that takes your GitHub credentials (username and password) as command-line arguments,
+A script that takes your GitHub credentials
+(username and password) as command-line arguments,
 uses the GitHub API to authenticate and display your GitHub user ID.
 """
 import sys
