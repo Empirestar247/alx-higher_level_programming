@@ -1,9 +1,9 @@
 ## 0x14-javascript-web_scraping
 
-## ## # 0x14-javascript-web_scraping
 `Scripting`
 `API`
 `JavaScript`
+
 ## Description
 
 Project dealing with working with JSON data, using the `request` module and fetch API, and read and write a file using the `fs` module.
